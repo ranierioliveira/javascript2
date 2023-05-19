@@ -6,56 +6,104 @@ const acao = prompt("Digite a ação que deseja: ");
 
 switch (acao){
     case "t":
-        console.log(...listaFilmes);
+        verTodosOsFIlmes();
     break
     case "rand":
-        listaFilmes.sort(()=>Math.random() - 0.5);
-        console.log(...listaFilmes);
+        mostrarFilmesEmOrdermAleatoria();
     break
     case "v":
-        const posicaoFilme = Number(prompt("Digite a posição do filme: "));
-        const filmeSelecionado = listaFilmes[posicaoFilme - 1];
-        console.log(filmeSelecionado);
+        verFilme();
     break;
     case "size":
-        const quantidadeFilmes = listaFilmes.length;
-        console.log(quantidadeFilmes);
+        mostrarQuantidadeDeFilmes();
     break;
     case "d":
-        const posicaoElemento = Number(prompt("Digite a posição filme: "));
-        listaFilmes.splice(posicaoElemento - 1, 1);
-        console.log(...listaFilmes);
+        deletaFilme();
     break;
     case "du":
-        listaFilmes.pop();
-        console.log(...listaFilmes);
+        deletaUltimoFilme();
     break;
     case "dp":
-        listaFilmes.shift();
-        console.log(...listaFilmes);
+        deletaPrimeiroFilme();
     break;
     case "a":
-        const adicionarFilme = prompt("Digite o filme para ser adicionado: ");
-        listaFilmes.push(adicionarFilme);
-        console.log(...listaFilmes);
+        adicionaFilme();
     break;
     case "p":
-        const[primeiroFilme] = listaFilmes;
-        console.log(primeiroFilme);
+        verPrimeiroFilme();
     break;
     case "u":
-        const ultimoFilme  = listaFilmes.at(-1);
-        console.log(ultimoFilme);
+        verUltimoFilme();
     break;
     case "asc":
-        listaFilmes.sort();
-        console.log(...listaFilmes);
+        filmesEmOrdemAlfabetica();
     break;
     case "desc":
-        listaFilmes.sort();
-        listaFilmes.reverse();
-        console.log(...listaFilmes);
+        ordemAlfabeticaInvertida();
     break;
     default:
         console.log("Ação desconhecida!");
+}
+
+function verTodosOsFIlmes(){
+    console.log(...listaFilmes);
+}
+function mostrarFilmesEmOrdermAleatoria(){
+    listaFilmes.sort(()=>Math.random() - 0.5);
+    console.log(...listaFilmes);
+}
+
+function verFilme(){
+    verTodosOsFIlmes();
+    const posicaoFilme = Number(prompt("Digite a posição do filme: "));
+    const filmeSelecionado = listaFilmes[posicaoFilme - 1];
+    console.log(filmeSelecionado);
+}
+
+function mostrarQuantidadeDeFilmes(){
+    const quantidadeFilmes = listaFilmes.length;
+    console.log(quantidadeFilmes);
+}
+
+function deletaFilme(){
+    const posicaoElemento = Number(prompt("Digite a posição filme: "));
+    listaFilmes.splice(posicaoElemento - 1, 1);
+    console.log(...listaFilmes);
+}
+
+function deletaUltimoFilme(){
+    listaFilmes.pop();
+    console.log(...listaFilmes);
+}
+
+function deletaPrimeiroFilme(){
+    listaFilmes.shift();
+    console.log(...listaFilmes);
+}
+
+function adicionaFilme(){
+    const adicionarFilme = prompt("Digite o filme para ser adicionado: ");
+    listaFilmes.push(adicionarFilme);
+    console.log(...listaFilmes);
+}
+
+function verPrimeiroFilme(){
+    const[primeiroFilme] = listaFilmes;
+    console.log(primeiroFilme);
+}
+
+function verUltimoFilme(){
+    const ultimoFilme  = listaFilmes.at(-1);
+    console.log(ultimoFilme);
+}
+
+function filmesEmOrdemAlfabetica(){
+    listaFilmes.sort();
+    console.log(...listaFilmes);
+}
+
+function ordemAlfabeticaInvertida(){
+    listaFilmes.sort();
+    listaFilmes.reverse();
+    console.log(...listaFilmes);
 }

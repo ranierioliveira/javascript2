@@ -8,6 +8,12 @@ function getItem (arr, index){
 }
 
 const colors = ['vermelho', 'azul', 'verde', 'roxo'];
-const color = getItem(colors, 4);
 
-console.log(color);
+
+try {
+    const color = getItem(colors, 4);
+    console.log(color);
+} catch (error) {
+    console.log('Deu erro!');
+}
+

@@ -1,4 +1,4 @@
-const num = [3 , 2, 5, 6, 1, 2, 10, 9, 7];
+const num = [3,2, 5, 6, 1, 2, 10, 9, 7];
 
 function ordenarNumeros (numA, numB){
     if(numA > numB){
